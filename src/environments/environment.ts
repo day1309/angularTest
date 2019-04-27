@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  url_login: 'http://rcid.cl/api/sn5/usuario/Authorized/',
+  url_country: 'https://restcountries.eu/rest/v2/all',
+  url_clients: 'http://rcid.cl/api/sn5/proveedor/Search'
 };
 
 /*

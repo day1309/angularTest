@@ -1,0 +1,43 @@
+<form name="formSearch">
+  <div class="row">
+    <div class="col">
+      <label for="formCountry">País</label>
+      <select class="custom-select" id="inputGroupSelect03" name="countrySelect" [(ngModel)]="countryModel" aria-label="Example select with button addon">
+        <option selected>Choose...</option>
+        <option *ngFor="let country of countries" [value]="country.numericCode">{{country.name}}</option>
+      </select>
+    </div>
+    <div class="col">
+      <label for="formGroupExampleInput">Razón Social</label>
+      <input type="text" class="form-control" name="socialreason" [(ngModel)]="reasonModel" id="formGroupExampleInput" placeholder="Razón Social">
+    </div>
+    <div class="col">
+      <label for="formGroupExampleInput2">Nombre</label>
+      <input type="text" class="form-control" name="nameSearch" [(ngModel)]="nameModel" id="formGroupExampleInput2" placeholder="Nombre">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col ">
+        <a href="javascript:;" class="btn btn-primary btn-md active mt-3 float-right" role="button" aria-pressed="true" (click)="buscar()">Buscar</a>
+    </div>
+  </div>
+</form>
+
+<table class="table mt-3">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Razón Social</th>
+      <th scope="col">Región</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let client of clients">
+      <th scope="row">{{client.id}}</th>
+      <td>{{client.name}}</td>
+      <td>{{client.reason}}</td>
+      <td>{{client.region}}</td>
+    </tr>
+  </tbody>
+</table>

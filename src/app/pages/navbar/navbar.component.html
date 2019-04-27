@@ -1,0 +1,69 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="../../../assets/images/logo2.png" width="50" height="50" alt="">
+      </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['home']" href="#">Inicio</a>
+        </li>
+        <li class="nav-item dropdown" *ngIf="auth.isAuthenticated()">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Menu
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" [routerLink]="['busqueda']" href="">Buscar</a>
+          </div>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0 pr-5">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      <span class="navbar-text">
+          <button *ngIf="!auth.isAuthenticated()" (click)="login()" type="button"
+            class="btn btn-outline-primary my-2 my-sm-0">Ingresar</button>
+        </span>
+        <span class="navbar-text">
+          <button *ngIf="auth.isAuthenticated()" (click)="logout()" type="button"
+            class="btn btn-outline-primary my-2 my-sm-0">Cerrar Session</button>
+        </span>
+    </div>
+  </nav>
+
+<!-- <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse bg-faded">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="../../../assets/images/logo-ex-7.png" width="40" height="40" alt="">
+    </a>
+  </nav>
+  <a class="navbar-brand" href="#">Angular Test</a>
+
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" *ngIf="auth.isAuthenticated()">
+        <a class="nav-link" [routerLink]="['busqueda']" href="#">Busqueda</a>
+      </li>
+    </ul>
+     <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form> -->
+   <!-- <span class="navbar-text">
+      <button *ngIf="!auth.isAuthenticated()" (click)="login()" type="button"
+        class="btn btn-outline-primary btn-sm">Ingresar</button>
+    </span>
+    <span class="navbar-text">
+      <button *ngIf="auth.isAuthenticated()" (click)="logout()" type="button"
+        class="btn btn-outline-primary btn-sm">Cerrar Session</button>
+    </span>
+  </div>
+</nav> -->
